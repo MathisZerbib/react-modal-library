@@ -1,10 +1,17 @@
-import React from 'react'
-
-import { ExampleComponent } from 'custom-modal-library'
+import React, {useState} from 'react'
+import { CustomModalComponent } from 'custom-modal-library'
 import 'custom-modal-library/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const [modal, setModal] = useState(false);
+  const Toggle = () => setModal(!modal);
+
+  return (
+    <>
+      <button onClick={()=> { Toggle()}}>Open Me</button>
+      <CustomModalComponent isOpen={modal}  fade={modal} customWidth={700} customHeight={100} color={'blue'} text='CustomModalComponent Example 😄' />
+    </>
+  )
 }
 
 export default App
