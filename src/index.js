@@ -1,46 +1,58 @@
-import React, {useRef, useEffect} from 'react'
-import styles from './styles.module.css'
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import Backdrop from './backdrop'
 
-export function CustomModalComponent ({ text, color, customWidth, customHeight, isOpen, fade }) {
-  console.log(color, customWidth, customHeight);
-
-
-  const ref = useRef(null);
-
-  useEffect(() => {
-    // 👇️ use document.getElementById()
-    const el = document.getElementById('containerModal');
-    console.log(el);
-
-    // 👇️ (better) use a ref
-    const el2 = ref.current;
-    console.log(el2);
-  }, []);
-  // function closeModal() {
-  //   console.log("Close Modal", 'fade', fade, 'isOpen', isOpen);
-  // isOpen = false;
-  // fade = false;
-  // }
-
-  function closeModal() {
-    console.log('wxb6=source.org',  ref.current)
-    ref.current.style = 'display: none;';
-
-  }
-
-
-
-  return isOpen ? (
-    <div ref={ref} id='containerModal'>
-    <div className={styles.modal + " "+ (fade ? styles.modalFade : '')}
-    style={{width:customWidth,
-     height:customHeight}}>
-      <div className={ styles.modalOverlay }  onClick={() => {closeModal()}} />
-      <span role="button" className={ styles.modalClose} aria-label="close" onClick={() =>{closeModal()}}>
-        x
-      </span>
-      <div className={ styles.modalBody}> {text}</div>
-    </div>
-    </div>
-  ) : null
+const wrapperStyles = {
+  width: '100%',
+  position: 'absolute',
+  left: 0,
+  top: 0
 }
+
+const modalStyles = {
+  maxWidth: '500px',
+  width: '100%',
+  border: '1px solid #ddd',
+  backgroundColor: 'white',
+  margin: '100px auto 0',
+  zIndex: 1,
+  position: 'relative',
+  padding: '10px'
+}
+
+const closeBtnStyles = {
+  position: 'absolute',
+  right: '20px',
+  top: '20px',
+  background: 'none',
+  border: 'none',
+  fontWeight: 'bold',
+  fontSize: '20px',
+  cursor: 'pointer'
+}
+
+export function CustomModalComponent ({ children, show, onClickCloseBtn }) {
+  return (
+    <Fragment>
+      {show && (
+        <div style={wrapperStyles}>
+          <Backdrop onClick={onClickCloseBtn} />
+          <div style={modalStyles}>
+            <button onClick={onClickCloseBtn} style={closeBtnStyles}>
+              X
+            </button>
+            {children}
+          </div>
+        </div>
+      )}
+    </Fragment>
+  )
+}
+
+CustomModalComponent.propTypes = {
+  children: PropTypes.element,
+  show: PropTypes.bool,
+  onClickCloseBtn: PropTypes.func
+}
+
+export default CustomModalComponent

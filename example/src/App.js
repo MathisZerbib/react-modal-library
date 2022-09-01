@@ -1,17 +1,35 @@
-import React, {useState} from 'react'
-import { CustomModalComponent } from 'custom-modal-library'
-import 'custom-modal-library/dist/index.css'
+import React, { useState } from 'react'
 
+import { CustomModalComponent } from 'custom-modal-library'
 
 const App = () => {
-  const [modal, setModal] = useState(false);
-  const OpenModal = () => setModal(!modal);
+  const [showModal, setShowModal] = useState(false)
+
+  const hideModal = () => showModal && setShowModal(false)
 
   return (
-    <>
-      <button onClick={()=> { OpenModal()}}>Open Me</button>
-      <CustomModalComponent isOpen={modal}  fade={modal} customWidth={700} customHeight={100} color={'blue'} text='CustomModalComponent Example 😄' />
-    </>
+    <div>
+      <h1 style={{ textAlign: 'center', padding: '10px' }}>react-modal</h1>
+      <button
+        style={{
+          width: '200px',
+          display: 'block',
+          margin: '0 auto',
+          padding: '10px',
+          background: 'none',
+          border: 'none',
+          backgroundColor: '#eee',
+          fontSize: '20px',
+          cursor: 'pointer'
+        }}
+        onClick={() => setShowModal(true)}
+      >
+        Show Modal
+      </button>
+      <CustomModalComponent show={showModal} onClickCloseBtn={hideModal}>
+        <h1>I am a modal</h1>
+      </CustomModalComponent>
+    </div>
   )
 }
 

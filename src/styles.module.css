@@ -27,12 +27,15 @@
   box-sizing: border-box;
 }
 
-.dNone {
-display: none;
+.visible {
+  display: block;
 }
 
-.modal .modalFade {
-  animation: fade-in 1s 1 linear;
+.hide {
+  display: none;
+}
+.modalFade {
+  animation: fade-in 3s 1 linear;
   animation-fill-mode: forwards;
   opacity: 0;
 }
