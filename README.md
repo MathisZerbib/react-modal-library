@@ -13,16 +13,43 @@ npm install --save custom-modal-library
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-import MyComponent from 'custom-modal-library'
-import 'custom-modal-library/dist/index.css'
+import { CustomModalComponent } from 'custom-modal-library'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  const [showModal, setShowModal] = useState(false)
+
+  const hideModal = () => showModal && setShowModal(false)
+
+  return (
+    <div>
+      <h1 style={{ textAlign: 'center', padding: '10px' }}>react-modal</h1>
+      <button
+        style={{
+          width: '200px',
+          display: 'block',
+          margin: '0 auto',
+          padding: '10px',
+          background: 'none',
+          border: 'none',
+          backgroundColor: '#eee',
+          fontSize: '20px',
+          cursor: 'pointer'
+        }}
+        onClick={() => setShowModal(true)}
+      >
+        Show Modal
+      </button>
+      <CustomModalComponent show={showModal} onClickCloseBtn={hideModal}>
+        <h1>I am a modal</h1>
+      </CustomModalComponent>
+    </div>
+  )
 }
+
+export default App
+
 ```
 
 ## License
