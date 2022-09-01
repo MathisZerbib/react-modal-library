@@ -27,7 +27,7 @@ const App = () => {
       <button
         onClick={() => setShowModal(true)}
       >
-      Show Modal
+       Show Modal
       </button>
       <CustomModalComponent show={showModal} onClickCloseBtn={hideModal}>
         <h1>Text example</h1>
