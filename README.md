@@ -24,25 +24,13 @@ const App = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: 'center', padding: '10px' }}>react-modal</h1>
       <button
-        style={{
-          width: '200px',
-          display: 'block',
-          margin: '0 auto',
-          padding: '10px',
-          background: 'none',
-          border: 'none',
-          backgroundColor: '#eee',
-          fontSize: '20px',
-          cursor: 'pointer'
-        }}
         onClick={() => setShowModal(true)}
       >
         Show Modal
       </button>
       <CustomModalComponent show={showModal} onClickCloseBtn={hideModal}>
-        <h1>I am a modal</h1>
+        <h1>Text example</h1>
       </CustomModalComponent>
     </div>
   )
