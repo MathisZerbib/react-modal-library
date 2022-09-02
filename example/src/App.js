@@ -26,7 +26,7 @@ const App = () => {
       >
         Show Modal
       </button>
-      <CustomModalComponent show={showModal} onClickCloseBtn={hideModal}>
+      <CustomModalComponent fadeDuration='2' width={800} height={250} color='red' overlayColor='blue' backgroundColor='black' closeColor='white' show={showModal} onClickCloseBtn={hideModal}>
         <h1>I am a modal</h1>
       </CustomModalComponent>
     </div>

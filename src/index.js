@@ -9,30 +9,51 @@ const wrapperStyles = {
   top: 0
 }
 
-const modalStyles = {
-  maxWidth: '500px',
-  width: '100%',
-  border: '1px solid #ddd',
-  backgroundColor: 'white',
-  margin: '100px auto 0',
-  zIndex: 1,
-  position: 'relative',
-  padding: '10px'
-}
+let transition = `@keyframes fade-in {
+  0% {
+    animation-timing-function: cubic-bezier(0.2242, 0.7499, 0.3142, 0.8148);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }`;
 
-const closeBtnStyles = {
-  position: 'absolute',
-  right: '20px',
-  top: '20px',
-  background: 'none',
-  border: 'none',
-  fontWeight: 'bold',
-  fontSize: '20px',
-  cursor: 'pointer'
-}
 
-export function CustomModalComponent ({ children, show, onClickCloseBtn }) {
+
+
+
+
+
+export function CustomModalComponent ({ children, show, onClickCloseBtn, width, height, color, overlayColor, backgroundColor, closeColor }) {
+  let closeBtnStyles = {
+    position: 'absolute',
+    right: '20px',
+    top: '20px',
+    background: 'none',
+    border: 'none',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    cursor: 'pointer'
+  }
+  let modalStyles = {
+    maxWidth: '500px',
+    width: '100%',
+    border: '1px solid #ddd',
+    backgroundColor: 'white',
+    margin: '100px auto 0',
+    zIndex: 1,
+    position: 'relative',
+    padding: '10px'
+  }
+
+  modalStyles.backgroundColor = backgroundColor
+  modalStyles.color = color
+  modalStyles.width = width
+  modalStyles.height = height
+  modalStyles.animation = transition+' 5s'
+  closeBtnStyles.color = closeColor
   return (
+    // <AnimateOnChange animationIn="popIn" animationOut="popOut">
     <Fragment>
       {show && (
         <div style={wrapperStyles}>
@@ -46,6 +67,7 @@ export function CustomModalComponent ({ children, show, onClickCloseBtn }) {
         </div>
       )}
     </Fragment>
+    // </AnimateOnChange>
   )
 }
 
