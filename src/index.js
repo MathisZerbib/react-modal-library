@@ -19,7 +19,7 @@ let transition = `@keyframes fade-in {
   }`;
 
 
-export function CustomModalComponent ({ children, show, onClickCloseBtn, width, height, color, overlayColor, backgroundColor, closeColor, textContent, subTextContent, ctaBtn, ctaText, ctaOnClick }) {
+export function CustomModalComponent ({ children, show, onClickCloseBtn, width, height, color, backgroundColor, closeColor, textContent, subTextContent, ctaBtn, ctaText, ctaOnClick }) {
   let closeBtnStyles = {
     position: 'absolute',
     right: '20px',
