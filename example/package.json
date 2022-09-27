@@ -1,7 +1,7 @@
 {
   "name": "@matzer/custom-modal-library-example",
   "homepage": ".",
-  "version": "0.0.2",
+  "version": "1.0.1",
   "repository": "https://github.com/MathisZerbib/custom-modal-library",
   "private": true,
   "scripts": {
