@@ -29,7 +29,7 @@ function CustomModal() {
       >
        Show Modal
       </button>
-      <CustomModalComponent show={showModal} onClickCloseBtn={hideModal}>
+      <CustomModalComponent show={showModal} hide={hideModal}>
         <h1>Text example</h1>
       </CustomModalComponent>
     </div>
@@ -49,7 +49,7 @@ import { CustomModalComponent } from 'custom-modal-library'
 function CustomModal(props) {
   return (
     <div>
-      <CustomModalComponent show={props.show} onClickCloseBtn={props.hide} >
+      <CustomModalComponent show={props.show} hide={props.hide} >
         <h1>Text example</h1>
       </CustomModalComponent>
     </div>
@@ -85,14 +85,13 @@ function CustomModal() {
         closeColor='white'
         textContent='Alert Modal has been triggrered'
         subTextContent='You can specify severals things here'
-        fadeDuration='2'
         width={800}
         height={250}
         show={showModal}
         ctaBtn={true}
         ctaText='Click Me!'
         ctaOnClick={()=> {console.log('Log from cta')}}
-        onClickCloseBtn={hideModal} >
+        hide={hideModal} >
       </CustomModalComponent>
     </div>
   )

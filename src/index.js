@@ -19,7 +19,7 @@ let transition = `@keyframes fade-in {
   }`;
 
 
-export function CustomModalComponent ({ children, show, onClickCloseBtn, width, height, color, backgroundColor, closeColor, textContent, subTextContent, ctaBtn, ctaText, ctaOnClick }) {
+export function CustomModalComponent ({ children, show, hide, width, height, color, backgroundColor, closeColor, textContent, subTextContent, ctaBtn, ctaText, ctaOnClick }) {
   let closeBtnStyles = {
     position: 'absolute',
     right: '20px',
@@ -53,9 +53,9 @@ export function CustomModalComponent ({ children, show, onClickCloseBtn, width, 
     <Fragment>
       {show && (
         <div style={wrapperStyles}>
-          <Backdrop onClick={onClickCloseBtn} />
+          <Backdrop onClick={hide} />
           <div style={modalStyles}>
-            <button onClick={onClickCloseBtn} style={closeBtnStyles}>
+            <button onClick={hide} style={closeBtnStyles}>
               X
             </button>
             {children}
@@ -80,7 +80,7 @@ export function CustomModalComponent ({ children, show, onClickCloseBtn, width, 
 CustomModalComponent.propTypes = {
   children: PropTypes.element,
   show: PropTypes.bool,
-  onClickCloseBtn: PropTypes.func
+  hide: PropTypes.func
 }
 
 export default CustomModalComponent

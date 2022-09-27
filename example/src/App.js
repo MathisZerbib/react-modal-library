@@ -39,7 +39,7 @@ const App = () => {
         ctaBtn={true}
         ctaText='Click Me!'
         ctaOnClick={()=> {console.log('Log from cta')}}
-        onClickCloseBtn={hideModal}
+        hide={hideModal}
 
       ></CustomModalComponent>
     </div>
