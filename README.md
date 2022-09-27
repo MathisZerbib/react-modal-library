@@ -10,14 +10,14 @@
 npm install --save custom-modal-library
 ```
 
-## Usage
+## Usage Standalone
 
 ```jsx
 import React, { useState } from 'react'
 
 import { CustomModalComponent } from 'custom-modal-library'
 
-const App = () => {
+function CustomModal() {
   const [showModal, setShowModal] = useState(false)
 
   const hideModal = () => showModal && setShowModal(false)
@@ -36,18 +36,38 @@ const App = () => {
   )
 }
 
-export default App
-
+export default CustomModal
 ```
 
-## Full Customization
+## Usage with react props
+
+```jsx
+import React from 'react'
+
+import { CustomModalComponent } from 'custom-modal-library'
+
+function CustomModal(props) {
+  return (
+    <div>
+      <CustomModalComponent show={props.show} onClickCloseBtn={props.hide} >
+        <h1>Text example</h1>
+      </CustomModalComponent>
+    </div>
+  )
+}
+
+export default CustomModal
+```
+
+
+## Full Customization standalone
 
 ```jsx
 import React, { useState } from 'react'
 
 import { CustomModalComponent } from 'custom-modal-library'
 
-const App = () => {
+function CustomModal() {
   const [showModal, setShowModal] = useState(false)
 
   const hideModal = () => showModal && setShowModal(false)
@@ -78,7 +98,7 @@ const App = () => {
   )
 }
 
-export default App
+export default CustomModal
 
 ```
 
