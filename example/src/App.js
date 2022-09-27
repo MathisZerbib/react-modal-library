@@ -26,9 +26,22 @@ const App = () => {
       >
         Show Modal
       </button>
-      <CustomModalComponent fadeDuration='2' width={800} height={250} color='red' overlayColor='blue' backgroundColor='black' closeColor='white' show={showModal} onClickCloseBtn={hideModal}>
-        <h1>I am a modal</h1>
-      </CustomModalComponent>
+      <CustomModalComponent
+        fadeDuration='2'
+        width={800}
+        height={250}
+        color='white'
+        overlayColor='blue'
+        backgroundColor='#4b66b7'
+        closeColor='white'
+        show={showModal}
+        onClickCloseBtn={hideModal}
+        textContent='Alert Modal has been triggrered'
+        subTextContent='You can specify severals things here'
+        ctaBtn={true}
+        ctaText='Click Me!'
+        ctaOnClick={()=> {console.log('Log from cta')}}
+      ></CustomModalComponent>
     </div>
   )
 }

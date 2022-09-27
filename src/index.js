@@ -19,12 +19,7 @@ let transition = `@keyframes fade-in {
   }`;
 
 
-
-
-
-
-
-export function CustomModalComponent ({ children, show, onClickCloseBtn, width, height, color, overlayColor, backgroundColor, closeColor }) {
+export function CustomModalComponent ({ children, show, onClickCloseBtn, width, height, color, overlayColor, backgroundColor, closeColor, textContent, subTextContent, ctaBtn, ctaText, ctaOnClick }) {
   let closeBtnStyles = {
     position: 'absolute',
     right: '20px',
@@ -43,7 +38,8 @@ export function CustomModalComponent ({ children, show, onClickCloseBtn, width, 
     margin: '100px auto 0',
     zIndex: 1,
     position: 'relative',
-    padding: '10px'
+    padding: '10px',
+    borderRadius: '25px'
   }
 
   modalStyles.backgroundColor = backgroundColor
@@ -63,7 +59,17 @@ export function CustomModalComponent ({ children, show, onClickCloseBtn, width, 
               X
             </button>
             {children}
+            <div className='main-content-modal'>
+            <h1 className='header-content'>{textContent}</h1>
+            <p>{subTextContent}</p>
+            {ctaBtn && (
+              <>
+              <button className='button1' onClick={ctaOnClick}>{ctaText}</button>
+              </>
+            )}
           </div>
+            </div>
+
         </div>
       )}
     </Fragment>

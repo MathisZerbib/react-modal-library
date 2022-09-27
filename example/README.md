@@ -3,3 +3,11 @@ This example was bootstrapped with [Create React App](https://github.com/faceboo
 It is linked to the custom-modal-library package in the parent directory for development purposes.
 
 You can run `npm install` and then `npm start` to test your package.
+
+
+
+
+IDEA TODO ?  :
+
+- Make function on modal overlay click add prop is closable or not ?
+- Choose the font fammily ?
