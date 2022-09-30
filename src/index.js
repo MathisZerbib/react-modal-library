@@ -9,16 +9,6 @@ const wrapperStyles = {
   top: 0
 }
 
-let transition = `@keyframes fade-in {
-  0% {
-    animation-timing-function: cubic-bezier(0.2242, 0.7499, 0.3142, 0.8148);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }`;
-
-
 export function CustomModalComponent ({ children, show, hide, width, height, color, backgroundColor, closeColor, textContent, subTextContent, ctaBtn, ctaText, ctaOnClick }) {
   let closeBtnStyles = {
     position: 'absolute',
@@ -46,10 +36,8 @@ export function CustomModalComponent ({ children, show, hide, width, height, col
   modalStyles.color = color
   modalStyles.width = width
   modalStyles.height = height
-  modalStyles.animation = transition+' 5s'
   closeBtnStyles.color = closeColor
   return (
-    // <AnimateOnChange animationIn="popIn" animationOut="popOut">
     <Fragment>
       {show && (
         <div style={wrapperStyles}>
@@ -73,7 +61,6 @@ export function CustomModalComponent ({ children, show, hide, width, height, col
         </div>
       )}
     </Fragment>
-    // </AnimateOnChange>
   )
 }
 

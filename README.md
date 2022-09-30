@@ -73,13 +73,15 @@ function CustomModal() {
   const hideModal = () => showModal && setShowModal(false)
 
   return (
-    <div>
+    <div className={!props.show ? "fade" : "show fade"}>
       <button
         onClick={() => setShowModal(true)}
       >
        Show Modal
       </button>
-      <CustomModalComponent color='white'
+      <CustomModalComponent
+        className="modal-fade"
+        color='white'
         overlayColor='blue'
         backgroundColor='#4b66b7'
         closeColor='white'
@@ -100,6 +102,64 @@ function CustomModal() {
 export default CustomModal
 
 ```
+
+## Some CSS to add transition based on your choice
+
+```
+.fade {
+  transition: opacity .15s linear;
+}
+.modal-fade {
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+  -webkit-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+```
+
+
+
+| Proprety      | Type          | Default Value  |
+| ------------- |:-------------:| :-------------:|
+| color         | stringigned | $1600          |
+| overlayColor      | centered      |   $12          |
+| zebra stripes | are neat      |    $1          |
+| zebra stripes | are neat      |    $1          |
+| zebra stripes | are neat      |    $1          |
+| zebra stripes | are neat      |    $1          |
+| zebra stripes | are neat      |    $1          |
+| zebra stripes | are neat      |    $1          |
+| zebra stripes | are neat      |    $1          |
+| zebra stripes | are neat      |    $1          |
+
+ ='white'
+        ='blue'
+        backgroundColor='#4b66b7'
+        closeColor='white'
+        textContent='Alert Modal has been triggrered'
+        subTextContent='You can specify severals things here'
+        width={800}
+        height={250}
+        show={showModal}
+        ctaBtn={true}
+        ctaText='Click Me!'
+        ctaOnClick={()=> {console.log('Log from cta')}}
+        hide={hideModal}
+
+
+
+  let modalStyles = {
+    maxWidth: '500px',
+    width: '100%',
+    border: '1px solid #ddd',
+    backgroundColor: 'white',
+    margin: '100px auto 0',
+    zIndex: 1,
+    position: 'relative',
+    padding: '10px',
+    borderRadius: '25px'
+  }
 
 
 
