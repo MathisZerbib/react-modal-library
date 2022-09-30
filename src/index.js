@@ -8,6 +8,11 @@ const wrapperStyles = {
   left: 0,
   top: 0
 }
+const modalMainContentStyles = {
+   padding: '0 20px',
+    textAlign: 'center',
+    margin: '0.5rem'
+}
 
 export function CustomModalComponent({
   children,
@@ -72,7 +77,7 @@ export function CustomModalComponent({
               X
             </button>
             {children}
-            <div className='main-content-modal'>
+            <div style={modalMainContentStyles}>
               <h1 className='header-content'>{modalTitle}</h1>
               <p>{modalText}</p>
               {ctaBtnShow && (
