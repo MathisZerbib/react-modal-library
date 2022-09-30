@@ -73,7 +73,7 @@ function CustomModal() {
   const hideModal = () => showModal && setShowModal(false)
 
   return (
-    <div className={!props.show ? "fade" : "show fade"}>
+    <div className={!showModal ? "fade" : "show fade"}>
       <button
         onClick={() => setShowModal(true)}
       >
@@ -120,18 +120,20 @@ export default CustomModal
 
 
 
-| Proprety      | Type          | Default Value  |
-| ------------- |:-------------:| :-------------:|
-| color         | stringigned | $1600          |
-| overlayColor      | centered      |   $12          |
-| zebra stripes | are neat      |    $1          |
-| zebra stripes | are neat      |    $1          |
-| zebra stripes | are neat      |    $1          |
-| zebra stripes | are neat      |    $1          |
-| zebra stripes | are neat      |    $1          |
-| zebra stripes | are neat      |    $1          |
-| zebra stripes | are neat      |    $1          |
-| zebra stripes | are neat      |    $1          |
+| Proprety        | Type          | Default Value    |
+| ----------------|:-------------:| :---------------:|
+| show            | Boolean       |    false         |
+| hide            | Boolean       |    false         |
+| width           | Int           |    null          |
+| height          | Int           |    null          |
+| color           | String        |    black         |
+| backgroundColor | String        |    white         |
+| closeColor      | String        |    black         |
+| modalTitle      | String        |    Hello         |
+| modalText       | String        | Modal Clicked !  |
+| ctaBtnShow      | Boolean       |    null          |
+| ctaText         | String        | Close Button     |
+| ctaOnClick      | Function      | ()=> console.log |
 
  ='white'
         ='blue'
