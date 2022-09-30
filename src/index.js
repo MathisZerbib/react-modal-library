@@ -55,7 +55,7 @@ export function CustomModalComponent({
     width: '100%',
     border: '1px solid #ddd',
     backgroundColor: 'white',
-    margin: '100px auto 0',
+    margin: '0 auto',
     zIndex: 1,
     position: 'relative',
     padding: '10px',
