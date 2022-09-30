@@ -2,7 +2,10 @@
   "name": "custom-modal-library",
   "version": "1.0.11",
   "description": "Made with create-react-library",
-  "author": "MathisZerbib",
+  "author": {
+    "name": "Mathis Zerbib",
+    "email": "mathis.zerbib.github@gmail.com"
+  },
   "license": "MIT",
   "repository": "MathisZerbib/custom-modal-library",
   "main": "dist/index.js",
