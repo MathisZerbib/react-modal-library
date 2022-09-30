@@ -27,18 +27,9 @@ const App = () => {
         Show Modal
       </button>
       <CustomModalComponent
-        color='white'
-        overlayColor='blue'
-        backgroundColor='#4b66b7'
-        closeColor='white'
-        textContent='Alert Modal has been triggrered'
-        subTextContent='You can specify severals things here'
-        width={800}
-        height={250}
         show={showModal}
-        ctaBtn={true}
+        ctaBtn={false}
         ctaText='Click Me!'
-        ctaOnClick={()=> {console.log('Log from cta')}}
         hide={hideModal}
 
       ></CustomModalComponent>

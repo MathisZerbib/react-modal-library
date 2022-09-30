@@ -85,8 +85,8 @@ function CustomModal() {
         overlayColor='blue'
         backgroundColor='#4b66b7'
         closeColor='white'
-        textContent='Alert Modal has been triggrered'
-        subTextContent='You can specify severals things here'
+        modalTitle='Alert Modal has been triggrered'
+        modalText='You can specify severals things here'
         width={800}
         height={250}
         show={showModal}
@@ -137,8 +137,8 @@ export default CustomModal
         ='blue'
         backgroundColor='#4b66b7'
         closeColor='white'
-        textContent='Alert Modal has been triggrered'
-        subTextContent='You can specify severals things here'
+        modalTitle='Alert Modal has been triggrered'
+        modalText='You can specify severals things here'
         width={800}
         height={250}
         show={showModal}

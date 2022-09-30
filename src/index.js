@@ -9,7 +9,7 @@ const wrapperStyles = {
   top: 0
 }
 
-export function CustomModalComponent ({ children, show, hide, width, height, color, backgroundColor, closeColor, textContent, subTextContent, ctaBtn, ctaText, ctaOnClick }) {
+export function CustomModalComponent ({ children, show, hide, width, height, color, backgroundColor, closeColor, modalTitle, modalText, ctaBtn, ctaText, ctaOnClick }) {
   let closeBtnStyles = {
     position: 'absolute',
     right: '20px',
@@ -29,14 +29,24 @@ export function CustomModalComponent ({ children, show, hide, width, height, col
     zIndex: 1,
     position: 'relative',
     padding: '10px',
-    borderRadius: '25px'
+    borderRadius: '25px',
+    color: '#eeeee'
   }
 
-  modalStyles.backgroundColor = backgroundColor
+  if(backgroundColor)
+      modalStyles.backgroundColor = backgroundColor
+  if(color)
   modalStyles.color = color
+  if(width)
   modalStyles.width = width
+  if(height)
   modalStyles.height = height
+  if(closeColor)
   closeBtnStyles.color = closeColor
+  if (!modalText)
+  modalText="Modal Clicked !"
+  if(!modalTitle)
+  modalTitle = "Hello"
   return (
     <Fragment>
       {show && (
@@ -48,8 +58,8 @@ export function CustomModalComponent ({ children, show, hide, width, height, col
             </button>
             {children}
             <div className='main-content-modal'>
-            <h1 className='header-content'>{textContent}</h1>
-            <p>{subTextContent}</p>
+            <h1 className='header-content'>{modalTitle}</h1>
+            <p>{modalText}</p>
             {ctaBtn && (
               <>
               <button className='button1' onClick={ctaOnClick}>{ctaText}</button>
