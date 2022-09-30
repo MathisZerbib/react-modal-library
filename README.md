@@ -30,7 +30,6 @@ function CustomModal() {
        Show Modal
       </button>
       <CustomModalComponent show={showModal} hide={hideModal}>
-        <h1>Text example</h1>
       </CustomModalComponent>
     </div>
   )
@@ -50,7 +49,6 @@ function CustomModal(props) {
   return (
     <div>
       <CustomModalComponent show={props.show} hide={props.hide} >
-        <h1>Text example</h1>
       </CustomModalComponent>
     </div>
   )
