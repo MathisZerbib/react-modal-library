@@ -119,6 +119,7 @@ export default CustomModal
 ```
 
 
+## Propreties List
 
 | Proprety        | Type          | Default Value    |
 | ----------------|:-------------:| :---------------:|
