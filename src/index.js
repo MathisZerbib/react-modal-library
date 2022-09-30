@@ -14,6 +14,17 @@ const modalMainContentStyles = {
     margin: '0.5rem'
 }
 
+
+const ButtonStyle = {
+  width: '200px',
+  display: 'block',
+  margin: '0px auto',
+  padding: '10px',
+  background: 'rgb(238, 238, 238)',
+  border: 'medium none',
+  fontSize: '20px',
+  cursor: 'pointer'
+}
 export function CustomModalComponent({
   children,
   show,
@@ -78,11 +89,11 @@ export function CustomModalComponent({
             </button>
             {children}
             <div style={modalMainContentStyles}>
-              <h1 className='header-content'>{modalTitle}</h1>
+              <h1>{modalTitle}</h1>
               <p>{modalText}</p>
               {ctaBtnShow && (
                 <>
-                  <button className='button1' onClick={ctaOnClick}>
+                  <button style={ButtonStyle} onClick={ctaOnClick}>
                     {ctaText}
                   </button>
                 </>

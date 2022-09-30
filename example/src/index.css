@@ -14,15 +14,3 @@ code {
 }
 
 
-/* CSS */
-.button1 {
-  width: 200px;
-  display: block;
-  margin: 0px auto;
-  padding: 10px;
-  background: rgb(238, 238, 238);
-  border: medium none;
-  font-size: 20px;
-  cursor: pointer;
-  }
-
