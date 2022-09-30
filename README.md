@@ -135,35 +135,6 @@ export default CustomModal
 | ctaText         | String        | Close Button     |
 | ctaOnClick      | Function      | ()=> console.log |
 
- ='white'
-        ='blue'
-        backgroundColor='#4b66b7'
-        closeColor='white'
-        modalTitle='Alert Modal has been triggrered'
-        modalText='You can specify severals things here'
-        width={800}
-        height={250}
-        show={showModal}
-        ctaBtnShow={true}
-        ctaText='Click Me!'
-        ctaOnClick={()=> {console.log('Log from cta')}}
-        hide={hideModal}
-
-
-
-  let modalStyles = {
-    maxWidth: '500px',
-    width: '100%',
-    border: '1px solid #ddd',
-    backgroundColor: 'white',
-    margin: '100px auto 0',
-    zIndex: 1,
-    position: 'relative',
-    padding: '10px',
-    borderRadius: '25px'
-  }
-
-
 
 ## License
 
