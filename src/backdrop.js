@@ -7,7 +7,8 @@ const backdropStyles = {
   top: 0,
   width: '100%',
   height: '100vh',
-  backgroundColor: 'rgba(0, 0, 0, 0.472)'
+  backgroundColor: 'rgba(0, 0, 0, 0.472)',
+  cursor: 'pointer'
 }
 
 const Backdrop = ({ onClick }) => {

@@ -30,7 +30,7 @@ export function CustomModalComponent ({ children, show, hide, width, height, col
     position: 'relative',
     padding: '10px',
     borderRadius: '25px',
-    color: '#eeeee'
+    color: 'black'
   }
 
   if(backgroundColor)
