@@ -28,8 +28,7 @@ const App = () => {
       </button>
       <CustomModalComponent
         show={showModal}
-        ctaBtn={false}
-        ctaText='Click Me!'
+        ctaBtnShow={true}
         hide={hideModal}
 
       ></CustomModalComponent>

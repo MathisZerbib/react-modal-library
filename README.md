@@ -90,7 +90,7 @@ function CustomModal() {
         width={800}
         height={250}
         show={showModal}
-        ctaBtn={true}
+        ctaBtnShow={true}
         ctaText='Click Me!'
         ctaOnClick={()=> {console.log('Log from cta')}}
         hide={hideModal} >
@@ -142,7 +142,7 @@ export default CustomModal
         width={800}
         height={250}
         show={showModal}
-        ctaBtn={true}
+        ctaBtnShow={true}
         ctaText='Click Me!'
         ctaOnClick={()=> {console.log('Log from cta')}}
         hide={hideModal}

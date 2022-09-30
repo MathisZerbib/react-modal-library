@@ -9,7 +9,21 @@ const wrapperStyles = {
   top: 0
 }
 
-export function CustomModalComponent ({ children, show, hide, width, height, color, backgroundColor, closeColor, modalTitle, modalText, ctaBtn, ctaText, ctaOnClick }) {
+export function CustomModalComponent({
+  children,
+  show,
+  hide,
+  width,
+  height,
+  color,
+  backgroundColor,
+  closeColor,
+  modalTitle,
+  modalText,
+  ctaBtnShow,
+  ctaText,
+  ctaOnClick
+}) {
   let closeBtnStyles = {
     position: 'absolute',
     right: '20px',
@@ -33,20 +47,21 @@ export function CustomModalComponent ({ children, show, hide, width, height, col
     color: 'black'
   }
 
-  if(backgroundColor)
-      modalStyles.backgroundColor = backgroundColor
-  if(color)
-  modalStyles.color = color
-  if(width)
-  modalStyles.width = width
-  if(height)
-  modalStyles.height = height
-  if(closeColor)
-  closeBtnStyles.color = closeColor
-  if (!modalText)
-  modalText="Modal Clicked !"
-  if(!modalTitle)
-  modalTitle = "Hello"
+  if (backgroundColor) modalStyles.backgroundColor = backgroundColor
+  if (color) modalStyles.color = color
+  if (width) modalStyles.width = width
+  if (height) modalStyles.height = height
+  if (closeColor) closeBtnStyles.color = closeColor
+  if (!modalText) modalText = 'Modal Clicked !'
+  if (!modalTitle) modalTitle = 'Hello'
+  if (ctaBtnShow && !ctaText) {
+    ctaText = 'Close Button'
+  }
+  if ((ctaBtnShow && ctaOnClick == null) || undefined) {
+    ctaOnClick = () => {
+      console.log('log from call to action button')
+    }
+  }
   return (
     <Fragment>
       {show && (
@@ -58,16 +73,17 @@ export function CustomModalComponent ({ children, show, hide, width, height, col
             </button>
             {children}
             <div className='main-content-modal'>
-            <h1 className='header-content'>{modalTitle}</h1>
-            <p>{modalText}</p>
-            {ctaBtn && (
-              <>
-              <button className='button1' onClick={ctaOnClick}>{ctaText}</button>
-              </>
-            )}
-          </div>
+              <h1 className='header-content'>{modalTitle}</h1>
+              <p>{modalText}</p>
+              {ctaBtnShow && (
+                <>
+                  <button className='button1' onClick={ctaOnClick}>
+                    {ctaText}
+                  </button>
+                </>
+              )}
             </div>
-
+          </div>
         </div>
       )}
     </Fragment>
