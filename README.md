@@ -135,7 +135,7 @@ export default CustomModal
 | ctaBtnShow      | Boolean       |    null          |enable the call to action button          |
 | ctaText         | String        | Close Button     |    Text of the call to action button          |
 | ctaOnClick      | Function      | ()=> console.log |    function that is triggered on click of the call to action button          |
-| x               | String        | undefined        |    x position (from top)          |
+| x               | String        | 24vh             |    x position (from top)          |
 | y               | Function      | undefined        |    y position ( from left)          |
 
 
