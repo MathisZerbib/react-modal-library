@@ -38,7 +38,9 @@ export function CustomModalComponent({
   modalText,
   ctaBtnShow,
   ctaText,
-  ctaOnClick
+  ctaOnClick,
+  x,
+  y
 }) {
   let closeBtnStyles = {
     position: 'absolute',
@@ -60,7 +62,8 @@ export function CustomModalComponent({
     position: 'relative',
     padding: '10px',
     borderRadius: '25px',
-    color: 'black'
+    color: 'black',
+    top: '34vh'
   }
 
   if (backgroundColor) modalStyles.backgroundColor = backgroundColor
@@ -68,6 +71,8 @@ export function CustomModalComponent({
   if (width) modalStyles.width = width
   if (height) modalStyles.height = height
   if (closeColor) closeBtnStyles.color = closeColor
+  if(y) modalStyles.top = y
+  if(x) modalStyles.left = x
   if (!modalText) modalText = 'Modal Clicked !'
   if (!modalTitle) modalTitle = 'Hello'
   if (ctaBtnShow && !ctaText) {

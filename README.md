@@ -87,6 +87,8 @@ function CustomModal() {
         modalText='You can specify severals things here'
         width={800}
         height={250}
+        x={'24vh'}
+        y={undefined}
         show={showModal}
         ctaBtnShow={true}
         ctaText='Click Me!'
@@ -119,20 +121,22 @@ export default CustomModal
 
 ## Propreties List
 
-| Proprety        | Type          | Default Value    |
-| ----------------|:-------------:| :---------------:|
-| show            | Boolean       |    false         |
-| hide            | Boolean       |    false         |
-| width           | Int           |    null          |
-| height          | Int           |    null          |
-| color           | String        |    black         |
-| backgroundColor | String        |    white         |
-| closeColor      | String        |    black         |
-| modalTitle      | String        |    Hello         |
-| modalText       | String        | Modal Clicked !  |
-| ctaBtnShow      | Boolean       |    null          |
-| ctaText         | String        | Close Button     |
-| ctaOnClick      | Function      | ()=> console.log |
+| Proprety        | Type          | Default Value    | Description       |
+| ----------------|:-------------:| :---------------:| :----------------:|
+| show            | Boolean       |    false         | show the modal    |
+| hide            | Boolean       |    false         | hide the modal    |
+| width           | Int           |    null          |width of the modal |
+| height          | Int           |    null          |height of the modal|
+| color           | String        |    black         |Text color body modal|
+| backgroundColor | String        |    white         |    background color of the modal           |
+| closeColor      | String        |    black         |    color of the close cross          |
+| modalTitle      | String        |    Hello         |    title of the modal          |
+| modalText       | String        | Modal Clicked !  |    title of the subtext          |
+| ctaBtnShow      | Boolean       |    null          |enable the call to action button          |
+| ctaText         | String        | Close Button     |    Text of the call to action button          |
+| ctaOnClick      | Function      | ()=> console.log |    function that is triggered on click of the call to action button          |
+| x               | String        | undefined        |    x position (from top)          |
+| y               | Function      | undefined        |    y position ( from left)          |
 
 
 ## License
