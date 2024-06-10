@@ -1,4 +1,4 @@
-# custom-modal-library
+# react-custom-modal-library
 
 > Made with create-react-library
 
